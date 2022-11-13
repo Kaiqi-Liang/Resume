@@ -1,0 +1,173 @@
+\documentclass[singlesided, paper=a4, fontsize=10pt]{style}
+\usepackage{hyperref}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[default]{lato}
+
+\usepackage{xcolor}
+\usepackage[none]{hyphenat}
+
+% \geometry{top = 0cm, bottom = 0cm}
+
+\begin{document}
+
+\name{Kaiqi Liang}
+\tagline{}
+\personalinfo{
+	\begin{tabular}{ll}
+		\phone{(61) 424180285} & \email{kaiqi.liang@outlook.com} \\
+		\location{Perth, Western Australia} & \homepage{http://kaiqi-liang.web.app/} \\
+		\linkedin{linkedin.com/in/kaiqiliang} & \github{github.com/Kaiqi-Liang}
+	\end{tabular}
+}
+
+\AtBeginEnvironment{itemize}{\small}
+
+%% Provide the file name containing the sidebar contents as an optional parameter to \cvsection.
+%% You can always just use \marginpar{...} if you do
+%% not need to align the top of the contents to any
+%% \cvsection title in the "main" bar.
+
+\highlightbar {
+	\makecvheader
+
+	\cvsection{EDUCATION}
+		\cvsideevent{Master of Information Technology}
+			{University of Western Australia (UWA)}
+			{February 2022 -- December 2023}
+		\wam{79.250}
+		\begin{itemize}
+			\item 2022: Computer Science Student Club (CSSC) Posgraduate Representative
+		\end{itemize}
+
+		\divider
+
+		\cvsideevent{Bachelor of Computer Science}
+			{University of New South Wales (UNSW)}
+			{February 2018 -- December 2021}
+		\wam{78.042}
+		\begin{itemize}
+			\item 2021: Computer Science and Engineering (CSE) Society Executive, CSE Student Representative
+			\item 2020: CSE Revue Social Director
+			\item 2019: CSE Society Peer Mentor, CSESoc Media Subcommittee
+		\end{itemize}
+
+	\cvsection{Achievements}
+		\begin{itemize}
+			\notablesubject{100}{(=1st)}{COMP3121}{Algorithms \& Programming Techiques}
+			\notablesubject{99}{(=1st)}{COMP1521}{Computer Systems Fundamentals}
+			\notablesubject{98}{(2nd)}{COMP2511}{Object-Oriented Design \& Programming}
+			\notablesubject{94}{(2nd)}{COMP2121}{Microprocessors \& Interfacing}
+			\notablesubject{94}{}{COMP1531}{Software Engineering Fundamentals}
+			\notablesubject{90}{}{COMP2521}{Data Structures and Algorithsm}
+			\notablesubject{90}{}{COMP6080}{Web Front-End Programming}
+			\notablesubject{87}{(=4th)}{CITS5501}{Software Testing \& Quality Assurance}
+		\end{itemize}
+
+	\cvsection{SKILLS}
+		\cvskilltitle{Web Development}
+		\begin{tabular}{llll}
+			HTML & CSS & JavaScript & TypeScript \\
+			React & MoBX & Vue
+		\end{tabular}
+
+		\medskip\normalsize
+
+		\cvskilltitle{Programming Languages}
+		\begin{tabular}{llll}
+			C & C++ & C\# & Java \\
+			Python & R & Rust & Perl \\
+			VHDL & Assembly & Shell Script & SQL \\
+			MATLAB & Dafny
+		\end{tabular}
+
+		\medskip\normalsize
+
+		\cvskilltitle{Other Technologies}
+		\begin{tabular}{llll}
+			Git & AWS & OpenGL
+		\end{tabular}
+}
+
+\mainbar {
+
+	\cvsection{EXPERIENCE}
+		\cvsideevent{Academic Tutor}
+			{UNSW School of Computer Science \& Engineering}
+			{February 2019 -- Present}
+		\begin{itemize}
+			\item Explain technical concepts and go through coding questions in tutorials
+			\item Guide students through the problem-solving and debugging process in computer laboratories and during help sessions
+			\item Develop assignments and tutorials exercises
+		\end{itemize}
+
+		\divider
+
+		\cvsideevent{Software Engineer Intern (Backend)}
+			{Google}
+			{November 2022 -- February 2023}
+		\begin{itemize}
+			\item Created a backend API in \technology{C++} to support emojis on Chrome OS
+		\end{itemize}
+
+		\divider
+
+		\cvsideevent{International Student Engagement Ambassador}
+			{UWA Office of Deputy Vice-Chancellor (Education)}
+			{August 2022 -- November 2022}
+		\begin{itemize}
+			\item Wrote \technology{Python} script that invokes a \technology{node.js} script to streamline the process of cross checking student information and their bank details using the \technology{pandas} library and the \technology{pdf-parse} node module
+			\item Organised excursions and social events tailored for international students
+		\end{itemize}
+
+		\divider
+
+		\cvsideevent{NuraGili Indigenous Tuition Program Tutor}
+			{UNSW Faculty of Deputy Vice-Chancellor (Academic)}
+			{September 2022 -- November 2022}
+		\begin{itemize}
+			\item Provided one-on-one academic assistance for Digital Circuits and Systems (COMP3222) which uses \technology{VHDL} and Solving Modern Programming Problems with \technology{Rust} (COMP6991)
+		\end{itemize}
+
+		\divider
+
+		% \cvsideevent{Professional Computing (CITS3200) Project Auditor}
+		% 	{UWA School of Physics Maths \& Computing}
+		% 	{August 2022 -- November 2022}
+		% \begin{itemize}
+		% 	\item Attended team meetings and commented on team processes
+		% 	\item Checked the veracity of claimed hours against evidence on \technology{GitHub}
+		% \end{itemize}
+
+		% \divider
+
+		\cvsideevent{Software Engineer Intern (Frontend)}
+			{Canva}
+			{December 2021 -- February 2022}
+		\begin{itemize}
+			\item Enhanced existing feature on Canva with added functionality to improve user experience
+			\item Followed Canva frontend design patterns to produce good quality and consistent code in \technology{React TypeScript} with \technology{MobX}
+		\end{itemize}
+
+	\cvsection{PROJECTS}
+		\cvevent{Tax Calculator}{}{}{}
+			{https://kaiqi-liang.github.io/Tax-Calculator/}{}
+		\begin{itemize}
+			\item A calculator that determines the tax category and the amount of tax withheld based on your income salary
+			\item Built frontend in \technology{React TypeScript} and deployed on \technology{GitHub.io}, backend in \technology{TypeScript} and deployed on \technology{Google App Engine}
+		\end{itemize}
+
+		\divider
+
+		\cvevent{Chrome Extension}{}{}{}
+			{http://bit.ly/YoutubeDistractionDisabler}{}
+		\begin{itemize}
+			\item A Chrome Extension for YouTube that removes distracting features
+			\item Built in \technology{TypeScript} and compiled to \technology{Vanilla JavaScript} before publishing to \technology{Chrome Web Store}
+		\end{itemize}
+}
+
+\makebody
+
+\end{document}
