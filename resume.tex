@@ -1,4 +1,4 @@
-\documentclass[singlesided, paper=a4, fontsize=10pt]{style}
+\documentclass[paper=a4, fontsize=10pt]{style}
 \usepackage{hyperref}
 
 \usepackage[utf8]{inputenc}
@@ -8,7 +8,8 @@
 \usepackage{xcolor}
 \usepackage[none]{hyphenat}
 
-% \geometry{top = 0cm, bottom = 0cm}
+% If more space is needed margin can be removed
+% \geometry{top=0cm, bottom=0cm}
 
 \begin{document}
 
@@ -29,7 +30,7 @@
 %% not need to align the top of the contents to any
 %% \cvsection title in the "main" bar.
 
-\highlightbar {
+\sidebar{
 	\makecvheader
 
 	\cvsection{EDUCATION}
@@ -86,12 +87,12 @@
 
 		\cvskilltitle{Other Technologies}
 		\begin{tabular}{llll}
-			Git & AWS & OpenGL
+			AWS & Git & Unity & Unreal Engine \\
+			OpenGL & TensorFlow & scikit-learn
 		\end{tabular}
 }
 
-\mainbar {
-
+\mainbar{
 	\cvsection{EXPERIENCE}
 		\cvsideevent{Academic Tutor}
 			{UNSW School of Computer Science \& Engineering}
