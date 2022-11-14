@@ -396,7 +396,7 @@
 \colorlet{skillrating}{SeaGreen}
 \colorlet{coursecode}{Peru}
 \colorlet{coursename}{TextColour}
-\colorlet{link}{HotPink}
+\colorlet{link}{Peru}
 \colorlet{icon}{HotPink}
 \colorlet{highlightbarcolor}{BackgroundColour}
 
@@ -407,5 +407,5 @@
 	\begin{tabular}{lr}
 		\color{HeadingColour}{WAM:} \color{emphasis}{#1} & \color{HeadingColour}{Extracurricular:}
 	\end{tabular}
-  \medskip\normalsize
+  \smallskip
 }
