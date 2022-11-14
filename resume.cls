@@ -63,6 +63,20 @@
 \setlist{leftmargin=*,labelsep=0.5em,nosep,itemsep=0.25\baselineskip,after=\vskip0.25\baselineskip}
 \setlength{\parindent}{0pt}
 
+\newtcbox{\badge}[1][Peru]{
+	on line,
+	arc=2pt,
+	colback=#1!50!black,
+	colframe=#1!50!black,
+	fontupper=\color{white},
+	boxrule=1pt,
+	boxsep=0pt,
+	left=3pt,
+	right=3pt,
+	top=2pt,
+	bottom=2pt,
+}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % COLOURS
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -96,9 +110,9 @@
 
 \newcommand{\ratingmarker}{\faCircle}
 
-\newcommand{\divider}{\color{body}{\hdashrule{\linewidth}{0.6pt}{0.5ex}}\smallskip}
+\newcommand{\divider}{\color{body}\hdashrule{\linewidth}{0.6pt}{0.5ex}\smallskip}
 
-\newcommand{\sidedivider}{\color{body}{\hdashrule{\linewidth}{0.6pt}{0.5ex}}\medskip}
+\newcommand{\sidedivider}{\color{body}\hdashrule{\linewidth}{0.6pt}{0.5ex}\medskip}
 
 \newcommand{\emailsymbol}{\faAt}
 \newcommand{\phonesymbol}{\faPhone}
@@ -160,22 +174,8 @@
 	{\color{emphasis}\large\bfseries{#1}\par}\medskip
 }
 
-\newtcbox{\badge}[1][Peru]{
-	on line,
-	arc=2pt,
-	colback=#1!50!black,
-	colframe=#1!50!black,
-	fontupper=\color{white},
-	boxrule=1pt,
-	boxsep=0pt,
-	left=3pt,
-	right=3pt,
-	top=2pt,
-	bottom=2pt,
-}
-
 \newcommand{\project}[2]{
-	\large\color{TextColour}\textbf{#1} \badge{\hyperlink{#2}{link}}\par
+	\large\color{TextColour}\textbf{\href{#2}{\icon{\faExternalLink}\color{Peru}#1}}\par
 	\smallskip\normalsize
 }
 
@@ -183,7 +183,7 @@
 	{\large\color{TextColour}\textbf{#1}\par}
 	\smallskip\normalsize
 	\ifstrequal{#2}{}{}{{\color{emphasis}#2}\par\smallskip}
-	\ifstrequal{#3}{}{}{{\small\makebox[0.5\linewidth][l]{\icon{\faCalendar}\hspace{0.5em}\color{calendar}#3}}}\par
+	\ifstrequal{#3}{}{}{{\small\makebox[0.5\linewidth][l]{\icon{\faCalendar}\color{calendar}#3}}}\par
 	\smallskip\normalsize
 }
 
@@ -232,7 +232,7 @@
 
 \newcommand{\wam}[1]{
 	\begin{tabular}{lr}
-		\color{HeadingColour}{WAM:} \color{emphasis}{#1} & \color{HeadingColour}{Extracurricular:}
+		\color{HeadingColour}{WAM:} \color{emphasis}{#1} & \color{HeadingColour}{Extracurriculars:}
 	\end{tabular}
 	\smallskip
 }
