@@ -10,6 +10,8 @@
 % PACKAGES
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\RequirePackage[most]{tcolorbox}
+\RequirePackage{hyperref}
 \RequirePackage{xcolor}
 \RequirePackage{fontawesome}
 \RequirePackage{scrlfile}
@@ -65,26 +67,26 @@
 % COLOURS
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\definecolor{SeaGreen}{HTML}{46c86a}
+\definecolor{Peru}{HTML}{cd975f}
 \definecolor{HotPink}{HTML}{e56fb4}
 \definecolor{TextColour}{rgb}{0.78,0.81,0.85}
 \definecolor{HeadingColour}{rgb}{0.42, 0.64, 0.97}
 \definecolor{BackgroundColour}{rgb}{0.05, 0.06, 0.09}
 
-\colorlet{name}{SeaGreen}
+\colorlet{name}{Peru}
 \colorlet{tagline}{HeadingColour}
 \colorlet{heading}{HeadingColour}
-\colorlet{accent}{SeaGreen}
-\colorlet{emphasis}{SeaGreen}
+\colorlet{accent}{Peru}
+\colorlet{emphasis}{Peru}
 \colorlet{body}{TextColour}
 \colorlet{location}{HotPink}
 \colorlet{ranking}{HotPink}
 \colorlet{calendar}{TextColour}
-\colorlet{skillsectiontitle}{SeaGreen}
-\colorlet{skillrating}{SeaGreen}
-\colorlet{coursecode}{SeaGreen}
+\colorlet{skillsectiontitle}{Peru}
+\colorlet{skillrating}{Peru}
+\colorlet{coursecode}{TextColour}
 \colorlet{coursename}{TextColour}
-\colorlet{icon}{HotPink}
+\colorlet{icon}{TextColour}
 
 \pagecolor{BackgroundColour}
 
@@ -149,7 +151,7 @@
 
 \newcommand{\cvsection}[2][]{
 	\bigskip
-	{\color{heading}\LARGE\bfseries{#2}}\\[-1ex]
+	{\color{heading}\LARGE{#2}}\\[-1ex]
 	{\color{heading}\rule{\linewidth}{2pt}\par}\medskip
 }
 
@@ -158,23 +160,27 @@
 	{\color{emphasis}\large\bfseries{#1}\par}\medskip
 }
 
-\newcommand{\cvevent}[6]{
-	{\large\color{emphasis}\bfseries{#1}\par}
-	\smallskip\normalsize
-	\ifstrequal{#2}{}{}{
-	\textbf{\color{emphasis}#2}\par
-	\smallskip}
-	\ifstrequal{#3}{}{}{{\small\makebox[0.5\linewidth][l]{\icon{\faCalendar}\hspace{0.5em}\color{calendar}#3}}}
-	\ifstrequal{#4}{}{}{{\small\makebox[0.5\linewidth][l]{\icon{\faMapMarker}\hspace{0.5em}\color{location}#4}}}\par
-	\smallskip
-	\ifstrequal{#5}{}{}{{\small\makebox[0.5\linewidth][l]{\outlink{#5}}}}\par
-	\smallskip
-	\ifstrequal{#6}{}{}{{\small\makebox[0.5\linewidth][l]{\outlink{#6}}}}\par
+\newtcbox{\badge}[1][Peru]{
+	on line,
+	arc=2pt,
+	colback=#1!50!black,
+	colframe=#1!50!black,
+	fontupper=\color{white},
+	boxrule=1pt,
+	boxsep=0pt,
+	left=3pt,
+	right=3pt,
+	top=2pt,
+	bottom=2pt,
+}
+
+\newcommand{\project}[2]{
+	\large\color{TextColour}\textbf{#1} \badge{\hyperlink{#2}{link}}\par
 	\smallskip\normalsize
 }
 
-\newcommand{\cvsideevent}[3]{
-	{\large\color{emphasis}\bfseries{#1}\par}
+\newcommand{\cvevent}[3]{
+	{\large\color{TextColour}\textbf{#1}\par}
 	\smallskip\normalsize
 	\ifstrequal{#2}{}{}{{\color{emphasis}#2}\par\smallskip}
 	\ifstrequal{#3}{}{}{{\small\makebox[0.5\linewidth][l]{\icon{\faCalendar}\hspace{0.5em}\color{calendar}#3}}}\par
@@ -219,7 +225,7 @@
 }
 
 \newcommand{\notablesubject}[4]{
-	\item \color{emphasis}{\textbf{#1}} \color{ranking}{#2} - \color{coursecode}{#3} \\ \color{coursename}{#4}
+	\item \color{emphasis}{\textbf{#1}} \ifstrequal{#2}{}{}{\badge{#2}} - \color{coursecode}\textbf{#3} \\ \color{coursename}{#4}
 }
 
 \newcommand{\technology}[1]{{\textbf{\color{white}#1}}}

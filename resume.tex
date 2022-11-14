@@ -1,15 +1,16 @@
 \documentclass[paper=a4,fontsize=10pt]{resume}
-\usepackage{hyperref}
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[default]{lato}
-
-\usepackage{xcolor}
 \usepackage[none]{hyphenat}
 
-% If more space is needed margin can be removed
-% \geometry{top=0cm, bottom=0cm}
+\geometry{top=0.5cm, bottom=0cm}
+
+\hypersetup{
+	colorlinks=true,
+	linkcolor=white,
+}
 
 \begin{document}
 
@@ -34,7 +35,7 @@
 	\makecvheader
 
 	\cvsection{EDUCATION}
-		\cvsideevent{Master of Information Technology}
+		\cvevent{Master of Information Technology}
 			{University of Western Australia (UWA)}
 			{February 2022 -- December 2023}
 		\wam{79.250}
@@ -44,7 +45,7 @@
 
 		\divider
 
-		\cvsideevent{Bachelor of Computer Science}
+		\cvevent{Bachelor of Computer Science}
 			{University of New South Wales (UNSW)}
 			{February 2018 -- December 2021}
 		\wam{78.042}
@@ -94,7 +95,7 @@
 
 \mainbar{
 	\cvsection{EXPERIENCE}
-		\cvsideevent{Academic Tutor}
+		\cvevent{Academic Tutor}
 			{UNSW School of Computer Science \& Engineering}
 			{February 2019 -- Present}
 		\begin{itemize}
@@ -105,7 +106,7 @@
 
 		\divider
 
-		\cvsideevent{Software Engineer Intern (Backend)}
+		\cvevent{Software Engineer Intern (Backend)}
 			{Google}
 			{November 2022 -- February 2023}
 		\begin{itemize}
@@ -114,7 +115,7 @@
 
 		\divider
 
-		\cvsideevent{International Student Engagement Ambassador}
+		\cvevent{International Student Engagement Ambassador}
 			{UWA Office of Deputy Vice-Chancellor (Education)}
 			{August 2022 -- November 2022}
 		\begin{itemize}
@@ -124,7 +125,7 @@
 
 		\divider
 
-		\cvsideevent{NuraGili Indigenous Tuition Program Tutor}
+		\cvevent{NuraGili Indigenous Tuition Program Tutor}
 			{UNSW Faculty of Deputy Vice-Chancellor (Academic)}
 			{September 2022 -- November 2022}
 		\begin{itemize}
@@ -133,17 +134,17 @@
 
 		\divider
 
-		% \cvsideevent{Professional Computing (CITS3200) Project Auditor}
-		% 	{UWA School of Physics Maths \& Computing}
-		% 	{August 2022 -- November 2022}
-		% \begin{itemize}
-		% 	\item Attended team meetings and commented on team processes
-		% 	\item Checked the veracity of claimed hours against evidence on \technology{GitHub}
-		% \end{itemize}
+		\cvevent{Professional Computing (CITS3200) Project Auditor}
+			{UWA School of Physics Maths \& Computing}
+			{August 2022 -- November 2022}
+		\begin{itemize}
+			\item Attended team meetings and commented on team processes
+			\item Checked the veracity of claimed hours against evidence on \technology{GitHub}
+		\end{itemize}
 
-		% \divider
+		\divider
 
-		\cvsideevent{Software Engineer Intern (Frontend)}
+		\cvevent{Software Engineer Intern (Frontend)}
 			{Canva}
 			{December 2021 -- February 2022}
 		\begin{itemize}
@@ -152,8 +153,7 @@
 		\end{itemize}
 
 	\cvsection{PROJECTS}
-		\cvevent{Tax Calculator}{}{}{}
-			{https://kaiqi-liang.github.io/Tax-Calculator/}{}
+		\project{Tax Calculator}{https://kaiqi-liang.github.io/Tax-Calculator/}
 		\begin{itemize}
 			\item A calculator that determines the tax category and the amount of tax withheld based on your income salary
 			\item Built frontend in \technology{React TypeScript} and deployed on \technology{GitHub.io}, backend in \technology{TypeScript} and deployed on \technology{Google App Engine}
@@ -161,8 +161,7 @@
 
 		\divider
 
-		\cvevent{Chrome Extension}{}{}{}
-			{http://bit.ly/YoutubeDistractionDisabler}{}
+		\project{Chrome Extension}{http://bit.ly/YoutubeDistractionDisabler}
 		\begin{itemize}
 			\item A Chrome Extension for YouTube that removes distracting features
 			\item Built in \technology{TypeScript} and compiled to \technology{Vanilla JavaScript} before publishing to \technology{Chrome Web Store}
