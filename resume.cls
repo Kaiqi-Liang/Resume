@@ -6,30 +6,37 @@
 \ProcessOptions*
 \LoadClass{scrartcl}
 
-\RequirePackage{silence}
-% The page header is deliberately disabled, so the warning by scrlayer-scrpage is invalid. 
-\WarningFilter{scrlayer-scrpage}{}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % PACKAGES
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\RequirePackage{xcolor}
 \RequirePackage{fontawesome}
 \RequirePackage{scrlfile}
 
 \RequirePackage[T1]{fontenc}
 \RequirePackage{graphicx}
-\RequirePackage{xcolor}
-\RequirePackage{fontawesome}
 
 \RequirePackage{xpatch}
 \RequirePackage{scrlayer-scrpage}
+
+\RequirePackage[bindingoffset=0cm,nomarginpar,noheadfoot]{geometry}
+\RequirePackage{enumitem}
+\RequirePackage{graphicx}
+\RequirePackage{etoolbox}
+\RequirePackage{dashrule}
+\RequirePackage{multirow,tabularx}
+\RequirePackage{changepage}
+
+\RequirePackage{silence}
+% The page header is deliberately disabled, so the warning by scrlayer-scrpage is invalid. 
+\WarningFilter{scrlayer-scrpage}{}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % GEOMETRY
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newlength\highlightwidth
+\newlength\sidewidth
 \newlength\headerheight
 \newlength\marginleft
 \newlength\marginright
@@ -39,7 +46,7 @@
 \newlength\mainbarwidth
 
 % default sizes and margins
-\setlength\highlightwidth{9cm}
+\setlength\sidewidth{9cm}
 \setlength\headerheight{2.5cm}
 \setlength\marginleft{0.7cm}
 \setlength\marginright{\marginleft}
@@ -47,22 +54,11 @@
 \setlength\margintop{1cm}
 \setlength\marginbottom{1cm}
 
-\RequirePackage[bindingoffset=0cm,nomarginpar,noheadfoot]{geometry}
 \geometry{left=\marginleft,right=\marginright,top=\margintop,bottom=\marginbottom}
 
 % minipage has an annoying af indent that must be removed
 \setlength{\parindent}{0pt}
-
-\RequirePackage{xcolor}
-
-\RequirePackage{enumitem}
 \setlist{leftmargin=*,labelsep=0.5em,nosep,itemsep=0.25\baselineskip,after=\vskip0.25\baselineskip}
-\RequirePackage{graphicx}
-\RequirePackage{etoolbox}
-\RequirePackage{dashrule}
-\RequirePackage{multirow,tabularx}
-\RequirePackage{changepage}
-
 \setlength{\parindent}{0pt}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -71,15 +67,14 @@
 
 \definecolor{SeaGreen}{HTML}{46c86a}
 \definecolor{HotPink}{HTML}{e56fb4}
-\definecolor{Peru}{HTML}{cd975f}
 \definecolor{TextColour}{rgb}{0.78,0.81,0.85}
 \definecolor{HeadingColour}{rgb}{0.42, 0.64, 0.97}
 \definecolor{BackgroundColour}{rgb}{0.05, 0.06, 0.09}
 
 \colorlet{name}{SeaGreen}
-\colorlet{tagline}{Peru}
+\colorlet{tagline}{HeadingColour}
 \colorlet{heading}{HeadingColour}
-\colorlet{accent}{Peru}
+\colorlet{accent}{SeaGreen}
 \colorlet{emphasis}{SeaGreen}
 \colorlet{body}{TextColour}
 \colorlet{location}{HotPink}
@@ -87,9 +82,8 @@
 \colorlet{calendar}{TextColour}
 \colorlet{skillsectiontitle}{SeaGreen}
 \colorlet{skillrating}{SeaGreen}
-\colorlet{coursecode}{Peru}
+\colorlet{coursecode}{SeaGreen}
 \colorlet{coursename}{TextColour}
-\colorlet{link}{Peru}
 \colorlet{icon}{HotPink}
 
 \pagecolor{BackgroundColour}
@@ -103,10 +97,6 @@
 \newcommand{\divider}{\color{body}{\hdashrule{\linewidth}{0.6pt}{0.5ex}}\smallskip}
 
 \newcommand{\sidedivider}{\color{body}{\hdashrule{\linewidth}{0.6pt}{0.5ex}}\medskip}
-
-\newenvironment{fullwidth}{
-	\begin{adjustwidth}{}{\dimexpr-\marginparwidth-\marginparsep\relax}}
-	{\end{adjustwidth}}
 
 \newcommand{\emailsymbol}{\faAt}
 \newcommand{\phonesymbol}{\faPhone}
@@ -128,7 +118,7 @@
 \newcommand{\linkedin}[1]{\printinfo{\linkedinsymbol}{#1}}
 \newcommand{\github}[1]{\printinfo{\githubsymbol}{#1}}
 \newcommand{\location}[1]{\printinfo{\locationsymbol}{#1}}
-\newcommand{\outlink}[1]{\color{link}{\faChain\hspace{0.5em}#1}}
+\newcommand{\outlink}[1]{\color{emphasis}{\faChain\hspace{0.5em}#1}}
 \newcommand{\icon}[1]{\color{icon}{#1\hspace{0.5em}}}
 
 \newcommand{\personalinfo}[1]{\def\@personalinfo{#1}}
@@ -143,26 +133,12 @@
 	\endgroup\medskip
 }
 
-% declare new page style using layers
-\DeclareNewPageStyleByLayers{headerhighlightmain}{
-	sidebar.even,
-	sidebar.odd,
-	header.bg
-}
-\DeclareNewPageStyleByLayers{highlightmain}{
-	sidebar.even,
-	sidebar.odd,
-}
-\DeclareNewPageStyleByLayers{headermain}{
-	header.bg
-}
-
 \newcommand{\sidebar}[1]{
-	\def\@sidebar{\begin{minipage}[t]{\dimexpr \highlightwidth-\marginleft-\marginright}#1\end{minipage}}
+	\def\@sidebar{\begin{minipage}[t]{\dimexpr \sidewidth-\marginleft-\marginright}#1\end{minipage}}
 }
 
 \newcommand{\mainbar}[1]{
-	\def\@mainbar{\begin{minipage}[t]{\dimexpr \textwidth-\highlightwidth}#1\end{minipage}}
+	\def\@mainbar{\begin{minipage}[t]{\dimexpr \textwidth-\sidewidth}#1\end{minipage}}
 }
 
 \newcommand{\makebody}{
@@ -183,10 +159,10 @@
 }
 
 \newcommand{\cvevent}[6]{
-	{\large\color{emphasis}#1\par}
+	{\large\color{emphasis}\bfseries{#1}\par}
 	\smallskip\normalsize
 	\ifstrequal{#2}{}{}{
-	\textbf{\color{accent}#2}\par
+	\textbf{\color{emphasis}#2}\par
 	\smallskip}
 	\ifstrequal{#3}{}{}{{\small\makebox[0.5\linewidth][l]{\icon{\faCalendar}\hspace{0.5em}\color{calendar}#3}}}
 	\ifstrequal{#4}{}{}{{\small\makebox[0.5\linewidth][l]{\icon{\faMapMarker}\hspace{0.5em}\color{location}#4}}}\par
@@ -198,9 +174,9 @@
 }
 
 \newcommand{\cvsideevent}[3]{
-	{\large\color{emphasis}#1\par}
+	{\large\color{emphasis}\bfseries{#1}\par}
 	\smallskip\normalsize
-	\ifstrequal{#2}{}{}{{\color{accent}#2}\par\smallskip}
+	\ifstrequal{#2}{}{}{{\color{emphasis}#2}\par\smallskip}
 	\ifstrequal{#3}{}{}{{\small\makebox[0.5\linewidth][l]{\icon{\faCalendar}\hspace{0.5em}\color{calendar}#3}}}\par
 	\smallskip\normalsize
 }
@@ -255,7 +231,16 @@
 	\smallskip
 }
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% LAYOUT
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\DeclareNewPageStyleByLayers{sidebarmain}{
+	sidebar.even,
+	sidebar.odd,
+}
+
 \AtBeginDocument{
-	\pagestyle{highlightmain}
+	\pagestyle{sidebarmain}
 	\color{body}
 }
