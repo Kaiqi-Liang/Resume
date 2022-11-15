@@ -11,13 +11,9 @@
 \RequirePackage{xcolor}
 \RequirePackage{fontawesome}
 \RequirePackage{scrlfile}
-
-\RequirePackage[T1]{fontenc}
-\RequirePackage{graphicx}
-
-\RequirePackage{xpatch}
 \RequirePackage{scrlayer-scrpage}
-
+\RequirePackage[T1]{fontenc}
+\RequirePackage{xpatch}
 \RequirePackage[bindingoffset=0cm,nomarginpar,noheadfoot]{geometry}
 \RequirePackage{enumitem}
 \RequirePackage{graphicx}
@@ -25,7 +21,6 @@
 \RequirePackage{dashrule}
 \RequirePackage{multirow,tabularx}
 \RequirePackage{changepage}
-
 \RequirePackage{silence}
 % the page header is deliberately disabled, so the warning by scrlayer-scrpage is invalid. 
 \WarningFilter{scrlayer-scrpage}{}
@@ -100,34 +95,17 @@
 % COMMANDS
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand{\ratingmarker}{\faCircle}
-
 \newcommand{\divider}{\color{White}\hdashrule{\linewidth}{0.6pt}{0.5ex}\smallskip}
-
-\newcommand{\sidedivider}{\color{White}\hdashrule{\linewidth}{0.6pt}{0.5ex}\medskip}
-
-\newcommand{\emailsymbol}{\faAt}
-\newcommand{\phonesymbol}{\faPhone}
-\newcommand{\homepagesymbol}{\faChain}
-\newcommand{\locationsymbol}{\faMapMarker}
-\newcommand{\linkedinsymbol}{\faLinkedin}
-\newcommand{\twittersymbol}{\faTwitter}
-\newcommand{\githubsymbol}{\faGithub}
-\newcommand{\orcidsymbol}{\aiOrcid}
-\newcommand{\mailsymbol}{\faEnvelope}
-
-\newcommand{\printinfo}[2]{\mbox{\color{White}\normalfont#1\hspace{0.5em}#2\hspace{1em}}}
-
 \newcommand{\name}[1]{\def\@name{#1}}
 \newcommand{\tagline}[1]{\def\@tagline{#1}}
-\newcommand{\email}[1]{\printinfo{\emailsymbol}{#1}}
-\newcommand{\phone}[1]{\printinfo{\phonesymbol}{#1}}
-\newcommand{\homepage}[1]{\printinfo{\homepagesymbol}{#1}}
-\newcommand{\linkedin}[1]{\printinfo{\linkedinsymbol}{#1}}
-\newcommand{\github}[1]{\printinfo{\githubsymbol}{#1}}
-\newcommand{\location}[1]{\printinfo{\locationsymbol}{#1}}
+\newcommand{\phone}[1]{\printinfo{\faPhone}{#1}}
+\newcommand{\email}[1]{\printinfo{\faAt}{#1}}
+\newcommand{\location}[1]{\printinfo{\faMapMarker}{#1}}
+\newcommand{\homepage}[1]{\printinfo{\faChain}{#1}}
+\newcommand{\linkedin}[1]{\printinfo{\faLinkedin}{#1}}
+\newcommand{\github}[1]{\printinfo{\faGithub}{#1}}
 \newcommand{\icon}[1]{\color{White}#1\hspace{0.5em}}
-
+\newcommand{\printinfo}[2]{\mbox{\color{White}\normalfont#1\hspace{0.5em}#2\hspace{1em}}}
 \newcommand{\personalinfo}[1]{\def\@personalinfo{#1}}
 
 \newcommand{\makecvheader}{
