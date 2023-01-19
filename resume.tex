@@ -4,8 +4,8 @@
 \usepackage[default]{lato}
 \usepackage[none]{hyphenat}
 
-\geometry{top=0.5cm, bottom=0cm}
-\hypersetup{colorlinks=true}
+\geometry{top=0cm, bottom=0cm}
+\hypersetup{colorlinks=true, urlcolor=white}
 
 \begin{document}
 
@@ -45,7 +45,7 @@
 			\item 2019: CSE Society Peer Mentor, CSESoc Media Subcommittee
 		\end{itemize}
 
-	\cvsection{Achievements}
+	\cvsubsection{Achievements}
 		\begin{itemize}
 			\notablesubject{100}{(=1st)}{COMP3121}{Algorithms \& Programming Techiques}
 			\notablesubject{99}{(=1st)}{COMP1521}{Computer Systems Fundamentals}
@@ -86,22 +86,32 @@
 
 \mainbar{
 	\cvsection{EXPERIENCE}
-		\cvevent{Academic Tutor}
-			{UNSW School of Computer Science \& Engineering}
-			{February 2019 -- Present}
-		\begin{itemize}
-			\item Explain technical concepts and go through coding questions in tutorials
-			\item Guide students through the problem-solving and debugging process in computer laboratories and during help sessions
-			\item Develop assignments and tutorials exercises
-		\end{itemize}
-
-		\divider
-
 		\cvevent{Software Engineer Intern (Backend)}
 			{Google}
 			{November 2022 -- February 2023}
 		\begin{itemize}
-			\item Provide the Backend service in \technology{C++} to support GIFs in the ChromeOS Emoji Picker by calling the \technology{Tenor API}
+			\item Provided the Backend service in \technology{C++} to support GIFs in the ChromeOS Emoji Picker by calling the \technology{\href{https://developers.google.com/tenor}{Tenor API}}
+			\item Implemented Frontend features in \technology{TypeScript} to call the Backend service
+		\end{itemize}
+
+		\divider
+
+		\cvevent{Software Engineer Intern (Frontend)}
+			{Canva}
+			{December 2021 -- February 2022}
+		\begin{itemize}
+			\item Enhanced existing features on Canva Live Presentations with added functionality to improve user experience
+			\item Followed Canva Frontend design patterns to produce good quality and consistent code in \technology{React TypeScript} with \technology{MobX}
+		\end{itemize}
+
+		\divider
+
+		\cvevent{Academic Tutor}
+			{UNSW School of Computer Science \& Engineering}
+			{February 2019 -- Present}
+		\begin{itemize}
+			\item Taught over 500 students technical concepts across 15 different courses
+			\item Developed exam, assignment and tutorial questions that are used to assess over 1000 students
 		\end{itemize}
 
 		\divider
@@ -110,7 +120,7 @@
 			{UWA Office of Deputy Vice-Chancellor (Education)}
 			{August 2022 -- November 2022}
 		\begin{itemize}
-			\item Wrote a \technology{Python} script that invokes a \technology{node.js} script to streamline the process of cross checking student information and their bank details using the \technology{pandas} library and the \technology{pdf-parse} node module
+			\item Reduced the time International Student Support Team spends on the manual process of cross-checking student information from 2 hours to 15 minutes per week by utilising the \technology{pandas Python library} and the \technology{pdf-parse node module}
 			\item Organised excursions and social events tailored for international students
 		\end{itemize}
 
@@ -126,28 +136,18 @@
 		\divider
 
 		\cvevent{Professional Computing (CITS3200) Project Auditor}
-			{UWA School of Physics Maths \& Computing}
+			{UWA School of Physics, Maths \& Computing}
 			{August 2022 -- November 2022}
 		\begin{itemize}
 			\item Attended team meetings and commented on team processes
 			\item Checked the veracity of claimed hours against evidence on \technology{GitHub}
 		\end{itemize}
 
-		\divider
-
-		\cvevent{Software Engineer Intern (Frontend)}
-			{Canva}
-			{December 2021 -- February 2022}
-		\begin{itemize}
-			\item Enhanced existing feature on Canva with added functionality to improve user experience
-			\item Followed Canva frontend design patterns to produce good quality and consistent code in \technology{React TypeScript} with \technology{MobX}
-		\end{itemize}
-
 	\cvsection{PROJECTS}
 		\project{Tax Calculator}{https://kaiqi-liang.github.io/Tax-Calculator/}
 		\begin{itemize}
 			\item A calculator that determines the tax category and the amount of tax withheld based on your income salary
-			\item Built frontend in \technology{React TypeScript} and deployed on \technology{GitHub.io}, backend in \technology{TypeScript} and deployed on \technology{Google App Engine}
+			\item Built the Frontend in \technology{React TypeScript} and deployed on \technology{GitHub.io}, Backend in \technology{TypeScript} and deployed on \technology{Google App Engine}
 		\end{itemize}
 
 		\divider

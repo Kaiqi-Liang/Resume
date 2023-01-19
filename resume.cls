@@ -30,7 +30,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \definecolor{Orange}{HTML}{cd975f}
-\definecolor{HotPink}{HTML}{e56fb4}
 \definecolor{White}{rgb}{0.78,0.81,0.85}
 \definecolor{Blue}{rgb}{0.42, 0.64, 0.97}
 \definecolor{DarkBlue}{rgb}{0.05, 0.06, 0.09}
@@ -135,6 +134,12 @@
 \newcommand{\cvsection}[2][]{
 	\bigskip
 	{\color{Blue}\LARGE{#2}}\\[-1ex]
+	{\color{Blue}\rule{\linewidth}{2pt}\par}\medskip
+}
+
+\newcommand{\cvsubsection}[2][]{
+	\bigskip
+	{\color{Blue}\Large{#2}}\\[-1ex]
 	{\color{Blue}\rule{\linewidth}{2pt}\par}\medskip
 }
 
