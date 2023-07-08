@@ -161,8 +161,8 @@
 	\medskip\normalsize
 }
 
-\newcommand{\notablesubject}[4]{
-	\item \color{Orange}\textbf{#1} \ifstrequal{#2}{}{}{\badge{\textbf{#2}}} - \color{White}\textbf{#3} \\ #4
+\newcommand{\hd}[4]{
+	\item \color{Orange}\textbf{#1} \ifstrequal{#2}{}{}{\badge{\textbf{#2}}} - \color{White}\textbf{#3} #4
 }
 
 \newcommand{\technology}[1]{{\textbf{\color{white}#1}}}
