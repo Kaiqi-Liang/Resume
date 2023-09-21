@@ -76,7 +76,7 @@
 }
 
 % default sizes and margins
-\setlength\sidewidth{9cm}
+\setlength\sidewidth{9.3cm}
 \setlength\headerheight{2.5cm}
 \setlength\marginleft{0.7cm}
 \setlength\marginright{\marginleft}
