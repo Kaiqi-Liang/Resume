@@ -76,11 +76,11 @@
 }
 
 % default sizes and margins
-\setlength\sidewidth{9.3cm}
+\setlength\sidewidth{11.5cm}
 \setlength\headerheight{2.5cm}
-\setlength\marginleft{0.7cm}
-\setlength\marginright{\marginleft}
-\setlength\marginmiddle{1.5cm}
+\setlength\marginleft{0.5cm}
+\setlength\marginright{0.3cm}
+\setlength\marginmiddle{0.5cm}
 \setlength\margintop{1cm}
 \setlength\marginbottom{1cm}
 
